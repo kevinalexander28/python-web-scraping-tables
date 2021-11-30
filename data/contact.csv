@@ -1,0 +1,65 @@
+Name,Comment,Datatype,Null Option,Is PK
+CONT_ID,"A unique, system-generated key that identifies a party in the
+system.",BIGINT,Not Null,Yes
+ACCE_COMP_TP_CD,"Represents one of the various types of access a party can have
+to a computer and related technologies.",BIGINT,Null,No
+PREF_LANG_TP_CD,"Identifies a preferred spoken language. For example, English,
+French, Spanish, and so forth.",BIGINT,Null,No
+CREATED_DT,The date that the party was created.,TIMESTAMP,Not Null,No
+INACTIVATED_DT,"The date which the party row was considered inactive through
+business processes such as collapsing and splitting, resulting in
+a new party record created, and so forth.",TIMESTAMP,Null,No
+CONTACT_NAME,"Identifies the full name of the person to be contacted within
+the corporation. For trusts, this identifies the trustee.",VARCHAR(255),Null,No
+PERSON_ORG_CODE,A pointer to the type of party: person or organization.,CHAR(1),Not Null,No
+SOLICIT_IND,"Determines whether this party can be solicited at any location
+group.",CHAR(1),Null,No
+CONFIDENTIAL_IND,Indicates whether this party's information must be kept confidential.,CHAR(1),Null,No
+CLIENT_IMP_TP_CD,"An identifier that uniquely separates one client importance
+type from another. Examples include high, medium, or low.",BIGINT,Null,No
+CLIENT_ST_TP_CD,"An identifier that uniquely separates one client status type
+from another. Examples include prospect, active, or suspended.",BIGINT,Null,No
+CLIENT_POTEN_TP_CD,"An identifier that uniquely separates one client potential
+type from another. Examples include high, medium, or low.",BIGINT,Null,No
+RPTING_FREQ_TP_CD,"Describes the frequency that a particular Party (CONTACT) would
+like to receive consolidated statements. Sample values include annually,
+semi-annually, monthly, and others. No business logic is currently
+being invoked on this field.",BIGINT,Null,No
+LAST_STATEMENT_DT,"The last time a consolidated statement was sent to the Party.
+No business logic is currently being invoked on this field.",TIMESTAMP,Null,No
+PROVIDED_BY_CONT,The ID of the party that referred this party to the organization.,BIGINT,Null,No
+ALERT_IND,"Indicates whether there is any kind of alert or restriction
+on this party. This field is set by the system when an active alert
+is associated with the Party record.",CHAR(1),Null,No
+LAST_UPDATE_DT,"When a record is added or updated, this field is updated with
+the date and time. On subsequent updates, the system uses this information
+to ensure that the update request includes a matching date and time
+on this field; if it does not, the update fails.",TIMESTAMP,Not Null,No
+LAST_UPDATE_USER,The ID of the user who last updated the data.,VARCHAR(20),Null,No
+LAST_UPDATE_TX_ID,"A unique, system-generated key that identifies the specific
+transaction within the log system that either created, updated, or
+deleted the data row.",BIGINT,Null,No
+DO_NOT_DELETE_IND,"Indicates whether the record can or cannot be deleted.  A blank
+value or a value of '0' means neither operational or history data
+can be deleted.  A value of '1' means both operational and history
+data can be deleted.  A value of '2' means only history data can be
+deleted.  A value of '3' means only operational data can be deleted. ",CHAR(1),Null,No
+LAST_USED_DT,"The date that this data was last used. There is no business
+logic associated with this field.",TIMESTAMP,Null,No
+LAST_VERIFIED_DT,"The date that this data was last verified. There is no business
+logic associated with this field.",TIMESTAMP,Null,No
+SOURCE_IDENT_TP_CD,The type for the source identifier.,BIGINT,Null,No
+SINCE_DT,Identifies the date that the contact became a customer.,TIMESTAMP,Null,No
+LEFT_DT,Identifies the date that the contact stopped being a customer.,TIMESTAMP,Null,No
+ACCESS_TOKEN_VALUE,"An access token is a means to protect a resource from unauthorized
+user or group access. When an access token value is associated with
+a resource such as a database record, only users or groups that are
+assigned that token can have access to that resource.",VARCHAR(50),Null,No
+PENDING_CDC_IND,"Indicates the presence of a pending critical data change for
+a party.",CHAR(1),Null,No
+ENTITYLINK_ST_TP_CD,"Identifies the status of a party that is persisted from virtual
+MDM. For example, 'Virtual-Owned Entity' or 'Persisted View'. ",BIGINT,Null,No
+ENTITY_ID,"The entity ID from virtual MDM when a party is persisted to
+the physical MDM.",BIGINT,Null,No
+ENTITY_TYPE,The associated entity type of the entity ID from virtual MDM.,VARCHAR(25),Null,No
+ENTITY_STATUS_TP_CD,Identifies the status of an entity.,BIGINT,Null,No
